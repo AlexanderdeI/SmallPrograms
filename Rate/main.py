@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import sys
+import os
 import requests
+import sys
 from PyQt5.QtWidgets import QWidget, QLabel, QApplication, QComboBox, QPushButton
 from PyQt5.QtGui import QPixmap, QFont
 
@@ -14,7 +15,7 @@ class NBRBApi(QWidget):
 
     def initUI(self):
         logo_label = QLabel(self)
-        logo_label.setPixmap(QPixmap("img/belarus_round.png"))
+        logo_label.setPixmap(QPixmap(os.path.join(os.getcwd(), "img", "belarus_round.png")))
         logo_label.move(0, 0)
 
         self.days()
@@ -78,7 +79,7 @@ class NBRBApi(QWidget):
         font.setPointSize(18)
 
         dollar_label = QLabel(self)
-        dollar_label.setPixmap(QPixmap("img/dollar.png"))
+        dollar_label.setPixmap(QPixmap(os.path.join(os.getcwd(), "img", "dollar.png")))
         dollar_label.move(50, 240)
 
         self.dollar_value = QLabel("0 руб.", self)
@@ -86,7 +87,7 @@ class NBRBApi(QWidget):
         self.dollar_value.move(140, 263)
 
         euro_label = QLabel(self)
-        euro_label.setPixmap(QPixmap("img/euro.png"))
+        euro_label.setPixmap(QPixmap(os.path.join(os.getcwd(), "img" , "euro.png")))
         euro_label.move(50, 300)
 
         self.euro_value = QLabel("0 руб.", self)
